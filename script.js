@@ -197,13 +197,18 @@ function createParticles(x, y) {
 }
 
 inputField.addEventListener("input", () => {
-    typeSound.play();
+    typeSound.currentTime = 0; // Reset sound to start
+    typeSound.play().catch(err => console.log("Type sound blocked:", err));
+
     let typedWord = inputField.value.trim();
     for (let i = 0; i < activeWords.length; i++) {
         if (activeWords[i].text === typedWord) {
             let rect = activeWords[i].element.getBoundingClientRect();
             createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
-            scoreSound.play();
+            
+            scoreSound.currentTime = 0; // Reset sound to start
+            scoreSound.play().catch(err => console.log("Score sound blocked:", err));
+
             score++;
             scoreDisplay.textContent = score;
             activeWords[i].element.remove();
