@@ -219,16 +219,19 @@ startButton.addEventListener("click", () => {
     startButton.style.display = "none";
     inputField.focus();
 
-    // Enable audio playback by playing and immediately pausing the sounds
-    typeSound.play().then(() => typeSound.pause());
-    scoreSound.play().then(() => scoreSound.pause());
-    gameOverSound.play().then(() => gameOverSound.pause());
+    // Unlock audio by playing a silent sound on user interaction
+    typeSound.volume = 0.01; // Set very low volume to avoid disturbance
+    typeSound.play().then(() => {
+        typeSound.pause();
+        typeSound.volume = 1; // Reset volume to normal after unlocking
+    }).catch(err => console.log("Audio unlock failed:", err));
 
     // Start the game
     setInterval(createWord, 2000);
     updateWords();
     setInterval(updateTimer, 1000);
 });
+
 document.getElementById("shareButton").addEventListener("click", () => {
     const gameLink = window.location.href; // Use the actual hosted link
     navigator.clipboard.writeText(gameLink).then(() => {
