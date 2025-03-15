@@ -1,0 +1,155 @@
+TEAM NAME: DEBEGGARS
+
+   TEAM MEMBERS:
+ALEENA P
+ANITHRA SYINDO
+BENITA BENNY
+CHRISTINE MICHAEL
+
+
+INTRODUCTION
+Falling Words Typing Game - Multiplayer
+
+A fast-paced typing game where words fall from the top, and players must type them correctly before they hit the bottom. Challenge your friends in real-time multiplayer mode.
+
+The Falling Words Typing Game is a fun and engaging way to improve your typing speed and accuracy while testing your reflexes. In this game, words appear at the top of the screen and start falling toward the bottom. The player's goal is to type each word correctly before it reaches the bottom of the screen. The player's goal is to type each word correctly before it reaches the bottom of the screen.
+PROBLEM STATEMENT
+Many people want to improve their typing speed and vocabulary while having fun. However:
+Most typing games are single-player and not competitive.
+Existing educational games feel boring and lack engagement.
+There’s demand for multiplayer real-time typing games for both casual users and competitive players.
+SOLUTION
+Fast-paced Multiplayer – Play against real opponents & compete for high scores.
+Competitive Gameplay – Winner/loser system keeps players engaged.
+Typing + Learning – Improves typing speed & word recognition.
+Mobile & Web-Based – No downloads required, just share a link & play
+
+
+
+SCREEN CAPTURES:
+//using HTML,CSS,JAVASCRIPT
+
+
+
+
+
+//using Godot engine and gd script
+
+
+//screen recording
+https://drive.google.com/file/d/1enA-pPud0HUhAV6MJXuXxyiJPoPrCh0x/view?usp=sharing
+
+FEATURES
+Single & Multiplayer Mode - Play solo or challenge friends in real-time.  
+Competitive Gameplay-The first player to lose gives their opponent a "You Won!" message.  
+Falling Words with Emojis - Words are displayed with fun emojis for extra engagement.  
+Timer & Score Tracking - Try to beat your high score before time runs out!  
+Smooth Animations & Particle Effects - Enjoy cool visual effects when you type correctly.  
+Game Link Sharing - Share the game with friends via a copyable link.  
+
+
+
+ How to Play?
+Click Start Game to begin.  
+2 Words will fall from the top of the screen.  
+Type the words in the input box before they reach the bottom.  
+If a word reaches the bottom, you lose! 
+In multiplayer, if your opponent loses first,you win!
+
+
+
+Play the Game
+https://bb534.github.io/falling_words_typing_game/
+
+
+
+
+
+
+
+Why Play?
+Improves typing speed and accuracy.
+Enhances hand-eye coordination and reaction time.
+Fun and challenging for all age groups.
+USE CASE
+1. Use Case Name:
+Multiplayer Falling Words Typing Game
+2. Actors:
+Player 1 (User playing the game)
+Player 2 (Opponent in multiplayer mode)
+System (Handles word falling, scoring, and game-over conditions)
+3. Pre-conditions:
+The user has access to a browser and an internet connection.
+ The game is hosted online (GitHub Pages, Netlify, etc.).
+The player has shared/joined a multiplayer game link (if playing with a friend).
+4. Flow of Events (Basic Gameplay - Single Player Mode)
+1 Player clicks "Start Game".
+ Words fall from the top of the screen.
+ Player types the words in the input field before they reach the bottom.
+ If the player types correctly:
+1.The word disappears.
+2.Score increases.
+3.Speed increases gradually.
+If a word reaches the bottom, the game ends with a "Game Over" message.
+  1.The high score is saved in local storage.
+ 2.The player can restart and try again.
+
+5. Flow of Events (Multiplayer Mode - Competitive Gameplay)
+Player 1 shares the game link with Player 2.
+ Both players start the game at the same time.
+ -Words fall, and both players type to clear them.
+ - If one player fails (a word reaches the bottom):
+They see "You Lost!"
+The opponent sees "You Won!"
+ -The game resets after a few seconds.
+
+6. Alternative Flows (Errors & Edge Cases)
+🔹 No words typed? → The game ends when time runs out or a word hits the bottom.
+ 🔹 Game lags? → The system adjusts the speed based on browser performance.
+ 🔹 Multiplayer disconnects? → The remaining player wins by default.
+
+7. Post-conditions:
+✅ Game saves high scores locally.
+ ✅ Players can play again or challenge another friend.
+ ✅ In multiplayer mode, the winner is displayed.
+REVENUE STREAMS
+Monetization Model
+Details
+1. Ads (Freemium Model)
+Use Google AdSense or Unity Ads to display ads in the free version.
+2. In-App Purchases
+Players can buy custom themes, emojis, avatars, or power-ups (e.g., slow opponent's words).
+3. Subscription Model
+Offer a "Pro Version" with no ads, exclusive word packs, and custom multiplayer rooms.
+4. Tournaments & eSports
+Host competitive tournaments with an entry fee & cash prizes.
+5. Sponsored Content
+Allow educational platforms to sponsor custom word lists & typing challenges.
+6. Schools & EdTech Licensing
+
+
+
+Sell bulk licenses to schools that want students to practice typing in a fun way.
+
+  TARGET AUDIENCE
+Casual Gamers – People who enjoy fast-paced word/typing games.
+Students & Schools – Improve typing speed in an interactive way.
+ Competitive Players – People who love leaderboards & online competition.
+🎯 Professionals – Employees who want to enhance typing skills for work.
+🚀 Growth & Scaling Plan
+📌 Short-Term (1-6 months)
+Launch game with basic multiplayer & leaderboard.
+Integrate ads & a freemium model.
+Market the game on TikTok, Discord, and gaming forums.
+📌 Mid-Term (6-12 months)
+Add in-game purchases (themes, power-ups, emojis, avatars.
+Partner with EdTech companies for school-based learning versions.
+Host competitive tournaments with prize pools.
+📌 Long-Term (1-3 years)
+Expand into mobile apps (iOS & Android).
+Develop AI-powered typing challenges for skill-based matchmaking.
+Scale up global tournaments with sponsorships.
+
+
+
+
