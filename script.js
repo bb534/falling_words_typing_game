@@ -1,3 +1,12 @@
+const socket = new WebSocket("wss://your-websocket-server.com"); // Replace with actual WebSocket server
+socket.onmessage = (event) => {
+    let data = JSON.parse(event.data);
+    
+    if (data.type === "playerLost") {
+        alert("You Won!"); // Show "You Won" if opponent loses
+        setTimeout(() => location.reload(), 2000);
+    }
+};
 const gameBoard = document.getElementById("gameBoard");
 const scoreDisplay = document.getElementById("score");
 const timerDisplay = document.getElementById("timer");
@@ -131,15 +140,19 @@ function updateWords() {
         // Check if the word has reached the bottom
         if (wordObj.top >= 400) {
             isGameOver = true;
+            
+            // Notify opponent that you lost
+            socket.send(JSON.stringify({ type: "playerLost" }));
+            
             gameOverSound.play().catch(() => {
                 console.log("Game-over sound blocked by browser autoplay policy.");
             });
+            
             updateHighScore();
-            alert(`Game Over! Your score: ${score}. High Score: ${highScore}`);
-            setTimeout(() => {
-                location.reload();
-            }, 1000); // Wait 1 second before reloading
+            alert("You Lost!"); // Show losing message
+            setTimeout(() => location.reload(), 2000);
         }
+        
     });
 
     if (!isGameOver) {
@@ -217,7 +230,7 @@ startButton.addEventListener("click", () => {
     setInterval(updateTimer, 1000);
 });
 document.getElementById("shareButton").addEventListener("click", () => {
-    const gameLink = window.location.href;
+    const gameLink = window.location.href; // Use the actual hosted link
     navigator.clipboard.writeText(gameLink).then(() => {
         alert("Game link copied! Share it with a friend.");
     }).catch(err => {
