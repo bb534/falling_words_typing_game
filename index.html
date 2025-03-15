@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Words Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="timer">Time: <span id="timer">60</span></div>
+        <div class="high-score">High Score: <span id="highScore">0</span></div>
+        <div class="game-board" id="gameBoard"></div>
+    </div>
+    <input type="text" id="inputField" 
+    autofocus placeholder="Type here..."
+    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+
+    <button id="startButton">Start Game</button>
+    <button id="howToPlayButton">How to Play</button>
+    <button id="shareButton">Share Game</button>
+
+
+    <!-- How to Play Modal -->
+    <div id="howToPlayModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>How to Play</h2>
+            <p>
+                Welcome to the Falling Words Typing Game! Here's how to play:
+                <ol>
+                    <li>Click the <strong>Start Game</strong> button to begin.</li>
+                    <li>Words will start falling from the top of the screen.</li>
+                    <li>Type the word in the input box and press <strong>Enter</strong> to score points.</li>
+                    <li>If a word reaches the bottom of the screen, the game is over.</li>
+                    <li>Try to score as many points as you can before the timer runs out!</li>
+                </ol>
+                <p style="font-family: 'Press Start 2P', cursive;">Good luck and have fun! 🎮</p>
+            </p>
+        </div>
+    </div>
+
+    <audio id="typeSound" src="type.wav"></audio>
+    <audio id="scoreSound" src="score.wav"></audio>
+    <audio id="gameOverSound" src="game-over.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

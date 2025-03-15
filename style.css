@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive; /* Default font for all text */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Gradient background */
+    background-size: 400% 400%; /* Larger background size for animation */
+    color: white;
+    animation: gradientAnimation 15s ease infinite; /* Background animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position */
+    }
+}
+
+.game-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 3px solid white;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    z-index: 1; /* Ensure the game container is above the background */
+}
+
+.score, .timer, .high-score {
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    z-index: 10;
+}
+
+.score {
+    top: 10px;
+    left: 10px;
+}
+
+.timer {
+    top: 10px;
+    right: 10px;
+}
+
+.high-score {
+    bottom: 10px;
+    left: 10px;
+}
+
+.game-board {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.falling-word {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    transition: top 0.1s linear;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Add spacing between the word and emoji */
+}
+
+#inputField {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    width: 500px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    z-index: 1; /* Ensure the input field is above the background */
+}
+
+#startButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #ff0080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button is above the background */
+}
+
+#startButton:hover {
+    background: #e60073;
+}
+
+#howToPlayButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #23a6d5; /* Blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1; /* Ensure the button is above the background */
+}
+
+#howToPlayButton:hover {
+    background: #1e87b0; /* Darker blue on hover */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it's on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+}
+
+.modal-content {
+    background-color: #2c3e50; /* Dark blue-gray background */
+    margin: 10% auto; /* Center the modal */
+    padding: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left; /* Align text to the left */
+    position: relative;
+    font-family: 'Press Start 2P', cursive; /* Retro font for all modal text */
+    color: white;
+    line-height: 1.6; /* Improve readability */
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-content ol {
+    padding-left: 20px; /* Add some padding to the list */
+}
+
+.modal-content li {
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0080; /* Red color on hover */
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: explode 0.5s ease-out;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%;
+        height: 70vh;
+    }
+
+    #inputField {
+        width: 90%;
+    }
+}
